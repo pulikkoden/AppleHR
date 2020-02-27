@@ -13,6 +13,7 @@ Installation process
 3. Change the directory in the command prompt to the path of InstalUtil.exe
     e.g. “C:\WINDOWS\Microsoft.NET\Framework\v4.0.30319”
 4. Get the path to the executable the windows service 
+
     e.g. “C:\...\VT Service Processor\VTProcessor.Service\bin\Release\VTProcessor.Service.exe”
 5.	Execute the following command to install the service
         InstallUtil.exe <path to executable>
