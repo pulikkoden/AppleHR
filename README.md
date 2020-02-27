@@ -1,6 +1,8 @@
 # Introduction 
 VT Service Processor is a windows service meant for assigning status of the orders of the Visibility Tool. 
 This windows service was created as a solution for the number of deadlocks and timeouts occurred when the assigning of statuses were done through the ‘VT Service’ project.
+
+
 The orders and statuses to be assigned are got from the queue table 'VTService_Status_Queue' of the 'UWReporting' database. The whole process is done with the help of multiple parallel threads in the windows service.  The threads are created based on Programs whose Ids are provided in the queue table.
 
 # Getting Started
