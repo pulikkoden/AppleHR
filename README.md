@@ -1,27 +1,22 @@
-# apple-hr
+# Introduction 
+VT Service Processor is a windows service meant for assigning status of the orders of the Visibility Tool. 
+This windows service was created as a solution for the number of deadlocks and timeouts occurred when the assigning of statuses were done through the ‘VT Service’ project.
+The orders and statuses to be assigned are got from the queue table 'VTService_Status_Queue' of the 'UWReporting' database. The whole process is done with the help of multiple parallel threads in the windows service.  The threads are created based on Programs whose Ids are provided in the queue table.
 
-a [Sails v1](https://sailsjs.com) application
+# Getting Started
 
+Installation process
+1. Clone and build the project. 
+2. Open the command prompt in Administrator mode
+3. Change the directory in the command prompt to the path of InstalUtil.exe
+    e.g. “C:\WINDOWS\Microsoft.NET\Framework\v4.0.30319”
+4. Get the path to the executable the windows service 
+    e.g. “C:\...\VT Service Processor\VTProcessor.Service\bin\Release\VTProcessor.Service.exe”
+5.	Execute the following command to install the service
+        InstallUtil.exe <path to executable>
 
-### Links
+    e.g. “InstallUtil.exe  C:\...\VT Service Processor\VTProcessor.Service\bin\Release\VTProcessor.Service.exe”
 
-+ [Get started](https://sailsjs.com/get-started)
-+ [Sails framework documentation](https://sailsjs.com/documentation)
-+ [Version notes / upgrading](https://sailsjs.com/documentation/upgrading)
-+ [Deployment tips](https://sailsjs.com/documentation/concepts/deployment)
-+ [Community support options](https://sailsjs.com/support)
-+ [Professional / enterprise options](https://sailsjs.com/enterprise)
-
-
-### Version info
-
-This app was originally generated on Tue Nov 06 2018 21:52:02 GMT+0530 (India Standard Time) using Sails v1.0.2.
-
-<!-- Internally, Sails used [`sails-generate@1.15.28`](https://github.com/balderdashy/sails-generate/tree/v1.15.28/lib/core-generators/new). -->
-
-
-
-<!--
-Note:  Generators are usually run using the globally-installed `sails` CLI (command-line interface).  This CLI version is _environment-specific_ rather than app-specific, thus over time, as a project's dependencies are upgraded or the project is worked on by different developers on different computers using different versions of Node.js, the Sails dependency in its package.json file may differ from the globally-installed Sails CLI release it was originally generated with.  (Be sure to always check out the relevant [upgrading guides](https://sailsjs.com/upgrading) before upgrading the version of Sails used by your app.  If you're stuck, [get help here](https://sailsjs.com/support).)
--->
-
+# Build and Test
+1.	The solution can be built by opening the solution file ‘VTServiceProcessor.sln’ in visual studio and choosing the build option. 
+2.	A unit test project is integrated in the solution, which can be used for testing.  ‘TestLaunchThreadsMethod’ function can be used to run the tests.
